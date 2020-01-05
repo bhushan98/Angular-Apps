@@ -1,0 +1,17 @@
+<h1>Customer Details</h1>
+<table class="table table-bordered" style="text-align: center">
+  <tr>
+    <td>Name  <button class="btn btn-success" (click)="sortByName()">Sort By Name</button> </td>
+    <td>Age  <button class="btn btn-success" (click)="sortByAge()">Sort By Age</button> </td>
+    <td>Mobile Number  <button class="btn btn-success" (click)="sortByMobile()">Sort By Mobile</button> </td>
+    <td>Email ID  <button class="btn btn-success" (click)="sortByMail()">Sort By Email</button> </td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor = "let c of customers; let i = index ">
+    <td>{{c.name}}</td>
+    <td>{{c.age}}</td>
+    <td>{{c.mobile}}</td>
+    <td>{{c.email}}</td>
+    <td><button class="btn btn-warning" (click)="deleteCustomer(i)">Delete</button></td>
+  </tr>
+</table>

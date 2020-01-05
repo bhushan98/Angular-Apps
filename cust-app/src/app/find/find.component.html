@@ -1,0 +1,28 @@
+<h1>Find Customer</h1>
+<div class="container" >
+<form (ngSubmit) = "findCustomer()">
+  <div class="form-group">
+    <label>Enter Name of the Customer </label> <br>
+    <input type="text" [(ngModel)] ="cname" class="form-control" name="cname" required> <br> <br>
+    <div class="form group">
+        <button type="submit" class="btn btn-success">Search Customer</button>
+    </div>
+  </div>
+</form>
+
+<div [hidden] = "!found">
+  <table class="table table-bordered">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mobile Number</th>
+        <th>Email ID</th>
+      </tr>
+      <tr *ngFor = "let c of customers">
+        <td>{{c.name}}</td>
+        <td>{{c.age}}</td>
+        <td>{{c.mobile}}</td>
+        <td>{{c.email}}</td>
+      </tr>
+    </table>
+</div>

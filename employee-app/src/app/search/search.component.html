@@ -1,0 +1,25 @@
+<form (ngSubmit)="searchEmp()">
+    <div class="form group">
+      <label>Enter the Emp Name</label><br>
+      <input type="text" [(ngModel)]=ename name="ename"><br><br> 
+    </div>
+    <div class="form group">
+      <button type="submit" class="btn btn-success">Search Employee</button>
+    </div>
+  </form>
+  
+  <div [hidden]="!found">
+  <table class="table table-bordered">
+    <tr>
+      <th>Emp Id</th>
+      <th>Emp Name</th>
+      <th>Emp Salary</th>
+    </tr>
+    <tr>
+      <td>{{employee.empId}}</td>
+      <td>{{employee.empName}}</td>
+      <td>{{employee.empSalary}}</td>
+    </tr>
+  </table>
+  </div>
+  

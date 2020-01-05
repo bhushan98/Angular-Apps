@@ -1,0 +1,21 @@
+<form (ngSubmit)='validate()'>
+<table class="table table-bordered">
+  <tr><th colspan="2">Logon Screen</th></tr>
+  <tr><td>User ID:</td>
+    <td><input [(ngModel)]=login.userId></td></tr>
+  <tr><td>Password:</td>
+      <td><input [(ngModel)]=login.password></td></tr>
+  <tr><td>Role</td>
+      <td><select name="selected" [(ngModel)] = login.role>
+        <option *ngFor = "let role of roles" [value] = "role">{{role}}</option>
+      </select></td></tr>
+  <tr><th colspan="2"><button type="submit">Login</button></th></tr>
+</table>
+</form>
+
+<hr>
+<div [hidden] = "!submitted">
+  User ID: {{login.userid}} <br>
+  Password: {{login.password}} <br>
+  Role: {{login.role}}
+</div>

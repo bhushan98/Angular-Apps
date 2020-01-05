@@ -1,0 +1,19 @@
+<h1>Trainer Details</h1>
+<table class="table table-bordered">
+  <tr> 
+    <th (click)="sortByName()">Name &darr; </th>
+    <th>Branch <button class="btn btn-success" (click)="sortByBranch()">&#11167;</button> </th>
+    <th>City  <button class="btn btn-success" (click)="sortByCity()">Sort</button> </th>
+    <th>Mobile  <button class="btn btn-success" (click)="sortByMobile()">Sort</button> </th>
+    <th>Email <button class="btn btn-success" (click)="sortByMail()">Sort</button> </th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor = "let t of trainers; let i = index ">
+    <td>{{t.name}}</td>
+    <td>{{t.branch}}</td>
+    <td>{{t.city}}</td>
+    <td>{{t.mobile}}</td>
+    <td>{{t.email}}</td>    
+    <td><button class="btn btn-warning" (click)="deleteTrainer(i)">Delete</button></td>
+  </tr>
+</table>

@@ -1,0 +1,33 @@
+<h3>Search Form </h3>
+<form (ngSubmit) = "searchProduct()" #searchForm="ngForm">
+  <table class="table">
+    <tr>
+      <td> 
+        <input type="text" [(ngModel)] ="input" #name=ngModel class="form-control" pattern="[A-Za-z]{1,}" name="input" placeholder="Enter product name or category" required>
+        <span *ngIf = "name.touched && name.invalid && (name.errors.required || name.errors.pattern)" class="alert-warning">
+            Please enter correct product name or category
+        </span>
+      </td>
+      <td> 
+        <button type="submit" [disabled]="!searchForm.valid" class="btn">Search</button> 
+      </td>
+    </tr>
+  </table>
+</form>
+
+<div [hidden] = "!found">
+    <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+        </tr>
+        <tr *ngFor = "let p of products">
+          <td>{{p.id}}</td>
+          <td>{{p.name}}</td>
+          <td>{{p.price}}</td>
+          <td>{{p.category}}</td>
+        </tr>
+      </table>
+  </div>

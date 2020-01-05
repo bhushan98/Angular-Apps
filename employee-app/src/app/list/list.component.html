@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+    <tr>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Employee Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employees; let i = index">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.empName}}</td>
+      <td>{{emp.empSalary}}</td>
+      <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td>
+    </tr>
+  </table>

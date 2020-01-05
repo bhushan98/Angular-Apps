@@ -1,0 +1,36 @@
+<h1>Find Trainer </h1>
+<form (ngSubmit) = "searchTrainer()">
+  <table class="table table-hover" style="text-align: center">
+    <tr>
+      <td> Enter Name:</td>
+      <td>
+        <input type="text" [(ngModel)] ="tname" class="form-control" name="tname" required> <br> <br>
+      </td>
+      
+      </tr>
+    <tr>
+      <td colspan="4" align="center">
+        <button type="submit" class="btn btn-success">Search Trainer</button>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<div [hidden] = "!found">
+    <table class="table table-bordered">
+        <tr>
+          <th>Name</th>
+          <th>Branch</th>
+          <th>City</th>
+          <th>Mobile</th>
+          <th>Email</th>
+        </tr>
+        <tr *ngFor = "let t of trainers">
+          <td>{{t.name}}</td>
+          <td>{{t.branch}}</td>
+          <td>{{t.city}}</td>
+          <td>{{t.mobile}}</td>
+          <td>{{t.email}}</td>
+        </tr>
+      </table>
+  </div>

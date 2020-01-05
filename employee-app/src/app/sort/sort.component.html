@@ -1,0 +1,15 @@
+<!--
+<button class="btn btn-info" (click)='sortEmp()'>Sort Emp</button>
+-->
+<table class="table table-bordered">
+  <tr>
+    <th>Emp ID<br><button class="btn btn-success" (click)="sortById()">Sort By ID</button></th>
+    <th>Emp Name<br><button class="btn btn-success" (click)="sortByName()">Sort By Name</button> </th>
+    <th>Emp Salary<br><button class="btn btn-success" (click)="sortBySalary()">Sort By Salary</button></th>
+  </tr>
+  <tr *ngFor="let emp of employees">
+    <td>{{emp.empId}}</td>
+    <td>{{emp.empName}}</td>
+    <td>{{emp.empSalary}}</td>
+  </tr>
+</table>

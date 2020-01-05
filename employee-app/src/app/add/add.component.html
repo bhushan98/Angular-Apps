@@ -1,0 +1,19 @@
+<form (ngSubmit)="addEmp()">
+    <div class="form-group">
+      <label>Enter the EmpID</label><br>
+      <input type="number" [(ngModel)]=employee.empId name="empId"><br>
+    </div>
+    <div class="form-group">
+      <label>Enter the EmpName</label><br>
+      <input type="text" [(ngModel)]=employee.empName name="empName"><br>
+    </div>
+    <div class="form group">
+      <label>Enter the Salary</label><br>
+      <input type="number" [(ngModel)]=employee.empSalary name="empSalary">
+    </div>
+    <div class="form group">
+      <br><br>
+      <button class="btn btn-success" type="submit">Add Employee</button>
+    </div>
+  </form>
+  

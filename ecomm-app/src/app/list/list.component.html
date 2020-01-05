@@ -1,0 +1,17 @@
+<h3>Product List</h3>
+<table class="table table-bordered">
+  <tr> 
+    <th> ID </th>
+    <th> Name  </th>
+    <th> Price  </th>
+    <th> Category </th>
+    <th> Option </th>
+  </tr>
+  <tr *ngFor = "let p of products; let i = index ">
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.category}}</td> 
+    <td><button class="btn btn-warning" (click)="deleteProduct(i)">Delete</button></td>
+  </tr>
+</table>
